@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ListProfessor;
+use DataTables;
 use Validator;
+use Log;
 
 class ListProfessorController extends Controller
 {
@@ -15,7 +17,7 @@ class ListProfessorController extends Controller
      */
     public function index()
     {
-        if (request()->ajax())
+        /*if (request()->ajax())
         {
             return datatables()->of(ListProfessor::lastest()->get())
                     ->addColumn('action', function($data){
@@ -26,8 +28,28 @@ class ListProfessorController extends Controller
                     })
                     ->rawColumns(['action'])
                     ->make(true);
-        }
-        return view('ajax_index');
+        }*/
+        $list_professors = ListProfessor::all()
+            ->map(function ($professor) {
+                    return [
+                        'id' => $professor->id,
+                        'image' => $professor->image,
+                        'full-name' => $professor->full_name,
+                        'email' => $professor->email,
+                        'telefono' => $professor->telefono,
+                        'puesto' => $professor->puesto,
+                    ];
+                }
+            );
+        return DataTables::of($list_professors)
+            ->addColumn(
+                'actions',
+                '<button type="button" name="edit" id="{{ $id }}" class="edit btn btn-primary btn-sm">Edit</button>
+                <button type="button" name="delete" id="{{ $id }}" class="delete btn btn-danger btn-sm">Delete</button>'
+            )
+            ->removeColumn('id')
+            ->rawColumns(['actions'])
+            ->make();
     }
 
     /**

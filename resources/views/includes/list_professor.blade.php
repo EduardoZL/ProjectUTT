@@ -1,38 +1,28 @@
-<head>
-<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lista de profesores</title>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
-  <!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->  
-  <!-- <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script> -->  
-  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" /> -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
- </head>
- <body>
-  <div class="container">    
-     <div class="d-flex justify-content-center">
-      <button type="button" name="create_record" id="create_record" class="btn btn-success btn-sm">Nuevo Registro</button>
-     </div>
-     <br />
-   <div class="table-responsive">
-    <table class="table table-bordered table-striped table-sm" id="user_table">
-           <thead class="thead-dark">
-            <tr>
-                <th width="10%">Foto</th>
-                <th width="15%">Nombre Completo</th>                
-                <th width="15%">Correo</th>                
-                <th width="20%">Telefono</th>
-                <th width="20%">Puesto</th>                
-                <th width="20%">Accion</th>
-            </tr>
-           </thead>
-       </table>
-   </div>
-   <br />
-   <br />
-  </div>
+<body>
+    <div class="container">    
+        <div class="d-flex justify-content-center">
+        <button type="button" name="create_record" id="create_record" class="btn btn-success btn-sm">Nuevo Registro</button>
+        </div>
+        <br />
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-sm" id="user_table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th width="10%">Foto</th>
+                        <th width="15%">Nombre Completo</th>                
+                        <th width="15%">Correo</th>                
+                        <th width="20%">Telefono</th>
+                        <th width="20%">Puesto</th>                
+                        <th width="20%">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <br />
+        <br />
+    </div>
  </body>
 
 <div id="formModal" class="modal fade" role="dialog">
@@ -107,172 +97,154 @@
     </div>
 </div>
 
-
 <script type="text/javascript">
-$(document).ready(function(){
+    var oTable;
+    $(document).ready(function(){
 
-    $('#user_table').DataTable({
-        
-        processing : true,
-        serverSide : true,
-        ajax : {
-        url: "{{ route('Proyecto.index') }}",
-        },
-        columns:[
-        {
-            data: 'image',
-            name: 'image',
-            render: function(data, type, full, meta){
-                return "<img src={{ URL::to('/') }}/images/" + data + " width='70' class='img-thumbnail' />";
-            },
-            orderable: false
-        },
-        {
-            data: 'full_name',
-            name: 'full_name'
-        },   
-        {
-            data: 'email',
-            name: 'email'
-        },   
-        {
-            data: 'telefono',
-            name: 'telefono'
-        },
-        {
-            data: 'puesto',
-            name: 'puesto'
-        },   
-        {
-            data: 'action',
-            name: 'action',
-            orderable: false
-        }
-        ]
-    });
-    oTable.draw();
+        oTable = $('#user_table').DataTable({
+                "pageLength": 25,
+                "language": {
+                    "url":"//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
+                    "searchPlaceholder": "Buscar",
+                },
+                "dom":"<'row'<'col-md-4'f><'col-md-4'><'col-md-4'l>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+                "processing": true,
+                "serverSide": true,
+                order: [
+                    [0, 'desc']                        
+                ],
+                "columns":[
+                    {"data": "image", "sortable": false, "orderable" : false},
+                    {"data": "full_name", "sortable": false},
+                    {"data": "email", "sortable": false},
+                    {"data": "telefono", "sortable": false},
+                    {"data": "puesto", "sortable": false},
+                    {"data": "actions", "sortable": false},
+                ],
+                "ajax": {
+                    url: "{{ route('Proyecto.index') }}",
+                }
+            });
 
- $('#create_record').click(function(){
-  $('.modal-title').text("Agregar nuevo registro");
-     $('#action_button').val("Add");
-     $('#action').val("Add");
-     $('#formModal').modal('show');
- });
+        $('#create_record').click(function(){
+            $('.modal-title').text("Agregar nuevo registro");
+            $('#action_button').val("Add");
+            $('#action').val("Add");
+            $('#formModal').modal('show');
+        });
 
- $('#sample_form').on('submit', function(event){
-  event.preventDefault();
-  if($('#action').val() == 'Add')
-  {
-   $.ajax({
-    url:"{{ route('Proyecto.store') }}",
-    method:"POST",
-    data: new FormData(this),
-    contentType: false,
-    cache:false,
-    processData: false,
-    dataType:"json",
-    success:function(data)
-    {
-     var html = '';
-     if(data.errors)
-     {
-      html = '<div class="alert alert-danger">';
-      for(var count = 0; count < data.errors.length; count++)
-      {
-       html += '<p>' + data.errors[count] + '</p>';
-      }
-      html += '</div>';
-     }
-     if(data.success)
-     {
-      html = '<div class="alert alert-success">' + data.success + '</div>';
-      $('#sample_form')[0].reset();
-      $('#user_table').DataTable().ajax.reload();
-     }
-     $('#form_result').html(html);
-    }
-   })
-  }
+        $('#sample_form').on('submit', function(event){
+            event.preventDefault();
+            if($('#action').val() == 'Add') {
+                $.ajax({
+                    url:"{{ route('Proyecto.store') }}",
+                    method:"POST",
+                    data: new FormData(this),
+                    contentType: false,
+                    cache:false,
+                    processData: false,
+                    dataType:"json",
+                    success:function(data)
+                    {
+                    var html = '';
+                    if(data.errors)
+                    {
+                    html = '<div class="alert alert-danger">';
+                    for(var count = 0; count < data.errors.length; count++)
+                    {
+                    html += '<p>' + data.errors[count] + '</p>';
+                    }
+                    html += '</div>';
+                    }
+                    if(data.success)
+                    {
+                    html = '<div class="alert alert-success">' + data.success + '</div>';
+                    $('#sample_form')[0].reset();
+                    $('#user_table').DataTable().ajax.reload();
+                    }
+                    $('#form_result').html(html);
+                    }
+                });
+            }
 
-  if($('#action').val() == "Edit")
-  {
-   $.ajax({
-    url:"{{ route('Proyecto.update') }}",
-    method:"POST",
-    data:new FormData(this),
-    contentType: false,
-    cache: false,
-    processData: false,
-    dataType:"json",
-    success:function(data)
-    {
-     var html = '';
-     if(data.errors)
-     {
-      html = '<div class="alert alert-danger">';
-      for(var count = 0; count < data.errors.length; count++)
-      {
-       html += '<p>' + data.errors[count] + '</p>';
-      }
-      html += '</div>';
-     }
-     if(data.success)
-     {
-      html = '<div class="alert alert-success">' + data.success + '</div>';
-      $('#sample_form')[0].reset();
-      $('#store_image').html('');
-      $('#user_table').DataTable().ajax.reload();
-     }
-     $('#form_result').html(html);
-    }
-   });
-  }
- });
+            if($('#action').val() == "Edit") {
+                $.ajax({
+                    url:"{{ route('Proyecto.update') }}",
+                    method:"POST",
+                    data:new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    dataType:"json",
+                    success:function(data)
+                    {
+                    var html = '';
+                    if(data.errors)
+                    {
+                    html = '<div class="alert alert-danger">';
+                    for(var count = 0; count < data.errors.length; count++)
+                    {
+                    html += '<p>' + data.errors[count] + '</p>';
+                    }
+                    html += '</div>';
+                    }
+                    if(data.success)
+                    {
+                    html = '<div class="alert alert-success">' + data.success + '</div>';
+                    $('#sample_form')[0].reset();
+                    $('#store_image').html('');
+                    $('#user_table').DataTable().ajax.reload();
+                    }
+                    $('#form_result').html(html);
+                    }
+                });
+            }
+        }); // End sample form.
 
- $(document).on('click', '.edit', function(){
-  var id = $(this).attr('id');
-  $('#form_result').html('');
-  $.ajax({
-   url:"/Proyecto/"+id+"/edit",
-   dataType:"json",
-   success:function(html){
-    $('#full_name').val(html.data.full_name);    
-    $('#email').val(html.data.email);    
-    $('#telefono').val(html.data.telefono);
-    $('#puesto').val(html.data.puesto);    
-    $('#store_image').html("<img src={{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
-    $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />");
-    $('#hidden_id').val(html.data.id);
-    $('.modal-title').text("Editar nuevo registro");
-    $('#action_button').val("Edit");
-    $('#action').val("Edit");
-    $('#formModal').modal('show');
-   }
-  })
- });
+        $(document).on('click', '.edit', function() {
+            var id = $(this).attr('id');
+            $('#form_result').html('');
+            $.ajax({
+                url:"/Proyecto/" + id + "/edit",
+                dataType:"json",
+                success:function(html) {
+                    $('#full_name').val(html.data.full_name);    
+                    $('#email').val(html.data.email);    
+                    $('#telefono').val(html.data.telefono);
+                    $('#puesto').val(html.data.puesto);    
+                    $('#store_image').html("<img src={{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
+                    $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />");
+                    $('#hidden_id').val(html.data.id);
+                    $('.modal-title').text("Editar nuevo registro");
+                    $('#action_button').val("Edit");
+                    $('#action').val("Edit");
+                    $('#formModal').modal('show');
+                }
+            });
+        });
 
- var user_id;
+        var user_id;
 
- $(document).on('click', '.delete', function(){
-  user_id = $(this).attr('id');
-  $('#confirmModal').modal('show');
- });
+        $(document).on('click', '.delete', function(){
+            user_id = $(this).attr('id');
+            $('#confirmModal').modal('show');
+        });
 
- $('#ok_button').click(function(){
-  $.ajax({
-   url:"Proyecto/destroy/"+user_id,
-   beforeSend:function(){
-    $('#ok_button').text('Eliminando...');
-   },
-   success:function(data)
-   {
-    setTimeout(function(){
-     $('#confirmModal').modal('hide');
-     $('#user_table').DataTable().ajax.reload();
-    }, 2000);
-   }
-  })
- });
-
-});
+        $('#ok_button').click(function(){
+            $.ajax({
+                url:"Proyecto/destroy/" + user_id,
+                beforeSend:function() {
+                    $('#ok_button').text('Eliminando...');
+                },
+                success:function(data) {
+                    setTimeout(function() {
+                        $('#confirmModal').modal('hide');
+                        $('#user_table').DataTable().ajax.reload();
+                    }, 2000);
+                }
+            });
+        });
+    }); // End document ready.
 </script>
