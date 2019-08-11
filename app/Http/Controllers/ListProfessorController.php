@@ -27,7 +27,7 @@ class ListProfessorController extends Controller
                     ->rawColumns(['action'])
                     ->make(true);
         }
-        return view('listProfessor_index');
+        return view('ajax_index');
     }
 
     /**

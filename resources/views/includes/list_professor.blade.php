@@ -1,23 +1,24 @@
-<html>
- <head>
+<head>
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lista</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>  
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <title>Lista de profesores</title>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> -->  
+  <!-- <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script> -->  
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" /> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
  </head>
  <body>
   <div class="container">    
-     <div align="center">
+     <div class="d-flex justify-content-center">
       <button type="button" name="create_record" id="create_record" class="btn btn-success btn-sm">Nuevo Registro</button>
      </div>
      <br />
-   <div class="table-responsive" align='left'>
-    <table class="table table-bordered table-striped" id="user_table">
-           <thead>
+   <div class="table-responsive">
+    <table class="table table-bordered table-striped table-sm" id="user_table">
+           <thead class="thead-dark">
             <tr>
                 <th width="10%">Foto</th>
                 <th width="15%">Nombre Completo</th>                
@@ -33,7 +34,6 @@
    <br />
   </div>
  </body>
-</html>
 
 <div id="formModal" class="modal fade" role="dialog">
  <div class="modal-dialog">
@@ -108,47 +108,49 @@
 </div>
 
 
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
 
- $('#user_table').DataTable({
-  processing: true,
-  serverSide: true,
-  ajax:{
-   url: "{{ route('Proyecto.index') }}",
-  },
-  columns:[
-   {
-    data: 'image',
-    name: 'image',
-    render: function(data, type, full, meta){
-     return "<img src={{ URL::to('/') }}/images/" + data + " width='70' class='img-thumbnail' />";
-    },
-    orderable: false
-   },
-   {
-    data: 'full_name',
-    name: 'full_name'
-   },   
-   {
-    data: 'email',
-    name: 'email'
-   },   
-   {
-    data: 'telefono',
-    name: 'telefono'
-   },
-   {
-    data: 'puesto',
-    name: 'puesto'
-   },   
-   {
-    data: 'action',
-    name: 'action',
-    orderable: false
-   }
-  ]
- });
+    $('#user_table').DataTable({
+        
+        processing : true,
+        serverSide : true,
+        ajax : {
+        url: "{{ route('Proyecto.index') }}",
+        },
+        columns:[
+        {
+            data: 'image',
+            name: 'image',
+            render: function(data, type, full, meta){
+                return "<img src={{ URL::to('/') }}/images/" + data + " width='70' class='img-thumbnail' />";
+            },
+            orderable: false
+        },
+        {
+            data: 'full_name',
+            name: 'full_name'
+        },   
+        {
+            data: 'email',
+            name: 'email'
+        },   
+        {
+            data: 'telefono',
+            name: 'telefono'
+        },
+        {
+            data: 'puesto',
+            name: 'puesto'
+        },   
+        {
+            data: 'action',
+            name: 'action',
+            orderable: false
+        }
+        ]
+    });
+    oTable.draw();
 
  $('#create_record').click(function(){
   $('.modal-title').text("Agregar nuevo registro");
