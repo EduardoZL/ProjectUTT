@@ -13,7 +13,7 @@
                     <li><a href="#">Creditos</a></li>
                 @endif
             </ul>
-            {{-- <div class="list-group">
+            <!-- <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action active">
                 Dashboard
             </a>
@@ -23,6 +23,6 @@
             <a href="#" class="list-group-item list-group-item-action disabled">
                 (Mantenimiento...)
             </a>
-        </div> --}}
+        </div> -->
     </div>
 </div>

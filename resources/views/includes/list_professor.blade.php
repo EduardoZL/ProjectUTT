@@ -274,6 +274,3 @@ $(document).ready(function(){
 
 });
 </script>
-
-{{-- web --}}
-{{-- http://localhost:8000/ajax-crud --}}
