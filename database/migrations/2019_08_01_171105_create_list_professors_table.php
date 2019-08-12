@@ -18,8 +18,7 @@ class CreateListProfessorsTable extends Migration
             $table->string('full_name');            
             $table->string('email');            
             $table->string('telefono');
-            $table->string('puesto');            
-            $table->string('image');
+            $table->string('puesto');
             $table->timestamps();
         });
     }

@@ -27,6 +27,8 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" defer></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
     
 </head>
 <body>
@@ -81,13 +83,13 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container" style="margin:0px;width:100%;padding:20px;">
                 <div class="row justify-content-center">
-                    <div class="col-md-3">
+                    <div class="col-3">
                         @include('includes.menu')
                     </div>
-                    <div class="col-md-9">
-                        <main class="py-4">
+                    <div class="col-9">
+                        <main class="" style="padding:0px;">
                             @yield('content')
                         </main>
                     </div>

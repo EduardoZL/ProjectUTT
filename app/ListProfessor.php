@@ -8,6 +8,6 @@ class ListProfessor extends Model
 {
     protected $table = 'list_professors';
     protected $fillable = [
-        'full_name', 'email', 'telefono', 'puesto', 'image'
+        'full_name', 'email', 'telefono', 'puesto'
     ];
 }
