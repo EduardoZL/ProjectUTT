@@ -29,4 +29,8 @@ class HomeController extends Controller
     public function list() {
         return view('list');
     }
+
+    /* public function curriculum() {
+        return view('curriculum');
+    } */
 }

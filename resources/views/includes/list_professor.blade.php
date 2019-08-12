@@ -4,16 +4,24 @@
         <button type="button" name="create_record" id="create_record" class="btn btn-success btn-sm">Nuevo Registro</button>
         </div>
         <br />
+        <div class="d-flex justify-content-center">
+            <h1> Lista de Profesores</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-sm" id="user_table">
                 <thead class="thead-dark">
                     <tr>
                         <!-- <th width="10%">Foto</th> -->
-                        <th width="20%">Nombre Completo</th>                
+                        <th width="20%">Nombre del Profesor</th>                
                         <th width="15%">Correo</th>                
                         <th width="10%">Telefono</th>
                         <th width="20%">Puesto</th>                
-                        <th width="25%">Accion</th>
+                        <th width="30%">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
