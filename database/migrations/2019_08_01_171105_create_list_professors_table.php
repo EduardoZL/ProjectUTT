@@ -14,6 +14,7 @@ class CreateListProfessorsTable extends Migration
     public function up()
     {
         Schema::create('list_professors', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');            
             $table->string('full_name');            
             $table->string('email');            
