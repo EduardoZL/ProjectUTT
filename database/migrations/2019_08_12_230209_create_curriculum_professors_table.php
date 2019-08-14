@@ -13,11 +13,8 @@ class CreateCurriculumProfessorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('curriculum_professors', function (Blueprint $table) {
-            //$table->engine = 'InnoDB';
-            $table->bigIncrements('id');
-            $table->integer('professors_id')->unsigned();
-            $table->foreign('professors_id')->reference('id')->on('list_professors');
+        Schema::create('curriculum_professors', function (Blueprint $table) {            
+            $table->bigIncrements('id');            
             //Seccion Curriculum
             //Datos generales.
             $table->date('fechaNacimiento');
@@ -71,9 +68,9 @@ class CreateCurriculumProfessorsTable extends Migration
      */
     public function down()
     {
-        //Schema::dropIfExists('curriculum_professors');
-        Schema::table('list_professors', function (Blueprint $table){
+        Schema::dropIfExists('curriculum_professors');
+        /* Schema::table('list_professors', function (Blueprint $table){
             $table->dropForeign('list_professors_professor_id_foreign');
-        });
+        }); */
     }
 }

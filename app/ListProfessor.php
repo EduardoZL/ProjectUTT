@@ -10,4 +10,9 @@ class ListProfessor extends Model
     protected $fillable = [
         'full_name', 'email', 'telefono', 'puesto'
     ];
+
+    public function curriculum() {
+
+        return $this->belongsTo(CurriculumProfessor::class);
+    }
 }

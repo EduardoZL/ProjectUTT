@@ -12,4 +12,9 @@ class CurriculumProfessor extends Model
         'lineaInvestigacion', 'gradoConsolidacion', 'añoRegistro', 'tipo', 'titulo', 'autores', 'descripcion', 'pais', 'isbn', 'issn', 'nombreAsignatura',
         'programaEducativo', 'periodo', 'nomProyecto',  'nomEmpresa', 'fechaInicio', 'fechaTermino', 'tipoGestion', 'funcionEncomendada', 'organoBeneficiado', 'año'
     ];
+
+    public function list_professors() {
+        
+        return $this->hasMany(ListProfessor::class);
+    }
 }
