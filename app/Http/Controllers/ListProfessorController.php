@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ListProfessor;
+use DataTables;
 use Validator;
+use Log;
 
 class ListProfessorController extends Controller
 {
@@ -15,7 +17,7 @@ class ListProfessorController extends Controller
      */
     public function index()
     {
-        if (request()->ajax())
+        /*if (request()->ajax())
         {
             return datatables()->of(ListProfessor::lastest()->get())
                     ->addColumn('action', function($data){
@@ -26,8 +28,29 @@ class ListProfessorController extends Controller
                     })
                     ->rawColumns(['action'])
                     ->make(true);
-        }
-        return view('ajax_index');
+        }*/
+        $list_professors = ListProfessor::all()
+            ->map(function ($professor) {
+                    return [
+                        'id' => $professor->id,                        
+                        'full_name' => $professor->full_name,
+                        'email' => $professor->email,
+                        'telefono' => $professor->telefono,
+                        'puesto' => $professor->puesto,
+                    ];
+                }
+            );
+        return DataTables::of($list_professors)
+            ->addColumn(
+                'actions',
+                '<a class="btn btn-sm btn-outline-primary" href="{{ url(\'invoice/\' . $id . \'/show\' ) }}" title="{{ trans(\'table.show\') }}">
+                <i class="fa fa-fw fa-eye"></i> </a>
+                <button type="button" name="edit" id="{{ $id }}" class="edit btn btn-primary btn-sm">Edit</button>
+                <button type="button" name="delete" id="{{ $id }}" class="delete btn btn-danger btn-sm">Delete</button>'
+            )
+            ->removeColumn('id')
+            ->rawColumns(['actions'])
+            ->make();
     }
 
     /**
@@ -48,12 +71,13 @@ class ListProfessorController extends Controller
      */
     public function store(Request $request)
     {
+        Log::info($request);
         $rules = array(
             'full_name'    =>  'required',            
             'email'     =>  'required',            
             'telefono'     =>  'required',
-            'puesto'     =>  'required',            
-            'image'         =>  'required|image|max:2048'
+            'puesto'     =>  'required'           
+            
         );
 
         $error = Validator::make($request->all(), $rules);
@@ -62,19 +86,17 @@ class ListProfessorController extends Controller
         {
             return response()->json(['errors' => $error->errors()->all()]);
         }
+        
 
-        $image = $request->file('image');
-
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-
-        $image->move(public_path('images'), $new_name);
+        //$new_name = rand() . '.' . $image->getClientOriginalExtension();
+        
 
         $form_data = array(
             'full_name'        =>  $request->full_name,            
             'email'         =>  $request->email,            
             'telefono'         =>  $request->telefono,
-            'puesto'         =>  $request->puesto,            
-            'image'             =>  $new_name
+            'puesto'         =>  $request->puesto          
+            
         );
 
         ListProfessor::create($form_data);
@@ -117,50 +139,32 @@ class ListProfessorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $image_name = $request->hidden_image;
-        $image = $request->file('image');
-        if($image != '')
+        Log::info($id);
+        Log::info($request);
+        
+        /* $image = $request->file('image'); */        
+                
+        $rules = array(
+            'full_name'    =>  'required',                
+            'email'     =>  'required',                
+            'telefono'     =>  'required',
+            'puesto'     =>  'required'                
+                
+        );
+
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
         {
-            $rules = array(
-                'full_name'    =>  'required',                
-                'email'     =>  'required',                
-                'telefono'     =>  'required',
-                'puesto'     =>  'required',                
-                'image'         =>  'image|max:2048'
-            );
-            $error = Validator::make($request->all(), $rules);
-            if($error->fails())
-            {
-                return response()->json(['errors' => $error->errors()->all()]);
-            }
-
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $image_name);
-        }
-        else
-        {
-            $rules = array(
-                'full_name'    =>  'required',                
-                'email'     =>  'required',                
-                'telefono'     =>  'required',
-                'puesto'     =>  'required',                
-                'perfil_deseable'     =>  'required'
-            );
-
-            $error = Validator::make($request->all(), $rules);
-
-            if($error->fails())
-            {
-                return response()->json(['errors' => $error->errors()->all()]);
-            }
-        }
+             return response()->json(['errors' => $error->errors()->all()]);
+        }        
 
         $form_data = array(
             'full_name'       =>   $request->full_name,            
             'email'        =>   $request->email,            
             'telefono'         =>  $request->telefono,
-            'puesto'        =>   $request->puesto,            
-            'image'            =>   $image_name
+            'puesto'        =>   $request->puesto           
+            
         );
         ListProfessor::whereId($request->hidden_id)->update($form_data);
 

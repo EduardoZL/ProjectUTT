@@ -233,8 +233,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
-        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-
+        Yajra\DataTables\DataTablesServiceProvider::class,
+        'Datatables' => Yajra\DataTables\Facades\DataTables::class,
     ],
 
 ];

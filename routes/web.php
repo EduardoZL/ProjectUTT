@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::resource('Proyecto', 'ListProfessorController');
 
-Route::post('Proyecto/update', 'ListProfessorController@update')->name('Proyecto.update');
+Route::post('Proyecto/update/{id}', 'ListProfessorController@update');
 
 Route::get('Proyecto/destroy/{id}', 'ListProfessorController@destroy');
 
