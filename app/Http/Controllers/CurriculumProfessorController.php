@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Log;
 
 class CurriculumProfessorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,9 +20,13 @@ class CurriculumProfessorController extends Controller
      */
     public function index()
     {
-        //
+        return view('curriculum');
     }
 
+    public function data($id) {
+        $professor = $id;
+        return view('curriculum', compact('professor'));
+    }
     /**
      * Show the form for creating a new resource.
      *

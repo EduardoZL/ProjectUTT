@@ -43,7 +43,7 @@ class ListProfessorController extends Controller
         return DataTables::of($list_professors)
             ->addColumn(
                 'actions',
-                '<a class="btn btn-sm btn-outline-primary" href="{{ url(\'invoice/\' . $id . \'/show\' ) }}" title="Ver">
+                '<a class="btn btn-sm btn-outline-primary" href="home/{{ $id }}/detalles" title="Ver">
                 <i class="fa fa-fw fa-eye"></i> </a>
                 <button type="button" name="edit" id="{{ $id }}" class="edit btn btn-primary btn-sm" title="Editar"><span class="fa fa-pencil m-1"></span></button>
                 <button type="button" name="delete" id="{{ $id }}" class="delete btn btn-danger btn-sm" title="Eliminar"><span class="fa fa-trash m-1"></span></button>'

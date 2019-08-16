@@ -9,6 +9,7 @@
 
                 <div class="card-body">
                         @include('includes.list_professor')
+                        
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
