@@ -1,5 +1,9 @@
 <body>
     <div class="container">
+        <div class="d-flex justify-content-center">
+            <button type="button" name="update_profile" id="update_profile" class="btn btn-success btn-sm">
+                <span class="fa fa-plus m-1"></span>Actualizar perfil</button>
+        </div>
         <div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -103,7 +107,7 @@
                         </table>
                     </div>
                 </div>
-                <!-- <h5 class="panel-title">
+                <h5 class="panel-title">
                         <a data-toggle="collapse" href="#seccion5">Produccion Academica</a>
                     </h5>
                 </div>
@@ -226,7 +230,7 @@
                             </thead>
                         </table>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>

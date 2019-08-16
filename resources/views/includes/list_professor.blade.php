@@ -16,8 +16,7 @@
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-sm" id="user_table">
                 <thead class="thead-dark">
-                    <tr>
-                        <!-- <th width="10%">Foto</th> -->
+                    <tr>                        
                         <th width="20%">Nombre del Profesor</th>                
                         <th width="15%">Correo</th>                
                         <th width="10%">Telefono</th>
@@ -70,14 +69,7 @@
             <div class="col-md-8">
              <input type="text" name="puesto" id="puesto" class="form-control" />
             </div>
-           </div>           
-           <!-- <div class="form-group">
-            <label class="control-label col-md-4">Selecciona una imagen de perfil : </label>
-            <div class="col-md-8">
-             <input type="file" name="image" id="image" />
-             <span id="store_image"></span>
-            </div>
-           </div> -->
+           </div> 
            <br />
            <div class="form-group" align="center">
             <input type="hidden" name="action" id="action" />
@@ -115,7 +107,7 @@
     $(document).ready(function(){
 
         oTable = $('#user_table').DataTable({
-                "pageLength": 25,
+                "pageLength": 10,
                 "language": {
                     "url":"//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
                     "searchPlaceholder": "Buscar...",
@@ -231,9 +223,7 @@
                     $('#full_name').val(html.data.full_name);    
                     $('#email').val(html.data.email);    
                     $('#telefono').val(html.data.telefono);
-                    $('#puesto').val(html.data.puesto);    
-                    /* $('#store_image').html("<img src={{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
-                    $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />"); */ 
+                    $('#puesto').val(html.data.puesto);                        
                     $('#hidden_id').val(html.data.id);
                     $('.modal-title').text("Editar nuevo registro");
                     $("#action_button").prop('value', 'Edit');
