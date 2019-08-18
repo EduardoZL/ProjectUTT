@@ -120,8 +120,7 @@
                 order: [
                     [0, 'desc']                        
                 ],
-                "columns":[
-                    /* {"data": "image", "sortable": false, "orderable" : false}, */
+                "columns":[                    
                     {"data": "full_name", "sortable": false},
                     {"data": "email", "sortable": false},
                     {"data": "telefono", "sortable": false},
