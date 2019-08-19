@@ -202,7 +202,7 @@
                                 </tr>
                                 <tr>
                                     <td width="30%">Descripcion :</td>
-                                    <td id="sec5Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->descripcion : '' }}</td>
+                                    <td height="100%" id="sec5Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->descripcion : '' }}</td>
                                 </tr>
                                 <tr>
                                     <td width="30%">Pais :</td>
@@ -237,7 +237,7 @@
                                 </tr>
                                 <tr>
                                     <td width="30%">Descripcion :</td>
-                                    <td id="sec52Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->artdescripcion : '' }}</td>
+                                    <td height="100%" id="sec52Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->artdescripcion : '' }}</td>
                                 </tr>
                                 <tr>
                                     <td width="30%">Pais :</td>
@@ -272,7 +272,7 @@
                                 </tr>
                                 <tr>
                                     <td width="30%">Descripcion :</td>
-                                    <td id="sec53Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->perdescripcion : '' }}</td>
+                                    <td height="100%" id="sec53Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->perdescripcion : '' }}</td>
                                 </tr>
                                 <tr>
                                     <td width="30%">Pais :</td>
