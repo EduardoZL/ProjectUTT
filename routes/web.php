@@ -27,3 +27,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Detalle de curriculum por profesor.
 Route::get('home/{professor}/detalles', 'CurriculumProfessorController@data');
+Route::post('home/{professor}/detalles', 'CurriculumProfessorController@store');

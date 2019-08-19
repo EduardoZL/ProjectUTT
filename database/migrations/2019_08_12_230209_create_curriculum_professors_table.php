@@ -27,12 +27,12 @@ class CreateCurriculumProfessorsTable extends Migration
             $table->string('horaCapacitacion')->nullable();
             //Evaluacion docente
             //$table->enum('evaluacionDocente', ['Enero-Abril', 'Mayo-Agosto', 'Septiembre-Diciembre']);
-            $table->string('Enero-Abril-A')->nullable();
-            $table->string('Mayo-Agosto-A')->nullable();
-            $table->string('Septiembre-Diciembre-A')->nullable();
-            $table->string('Enero-Abril-T')->nullable();
-            $table->string('Mayo-Agosto-T')->nullable();
-            $table->string('Septiembre-Diciembre-T')->nullable();
+            $table->string('Enero_Abril_A')->nullable();
+            $table->string('Mayo_Agosto_A')->nullable();
+            $table->string('Septiembre_Diciembre_A')->nullable();
+            $table->string('Enero_Abril_T')->nullable();
+            $table->string('Mayo_Agosto_T')->nullable();
+            $table->string('Septiembre_Diciembre_T')->nullable();
             //Cuerpo academico.
             $table->string('ncuerpoAcademico')->nullable();
             $table->string('lineaInvestigacion')->nullable();

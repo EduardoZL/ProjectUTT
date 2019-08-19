@@ -5,10 +5,8 @@
                 @if (auth()->check())                    
                     <li><a href="{{ url('/home') }}">Lista de profesores</a></li>
                 @else
-                    {{-- <li><a href="#">Bienvenido</a></li>
-                    <li><a href="#">Instrucciones</a></li>
-                    <li><a href="#">Creditos</a></li> --}}
+                    <li><a href="{{ url('/') }}">Bienvenido</a></li>
                 @endif
-            </ul>            
+            </ul>         
     </div>
 </div>

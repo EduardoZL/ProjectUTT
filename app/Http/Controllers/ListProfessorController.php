@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ListProfessor;
+use App\CurriculumProfessor;
 use DataTables;
 use Validator;
 use Log;
@@ -99,8 +100,46 @@ class ListProfessorController extends Controller
             
         );
 
-        ListProfessor::create($form_data);
-
+        $professor = ListProfessor::create($form_data);
+        $form_data_curriculum = array(                       
+            'fechaNacimiento'         =>  NULL,            
+            'curp'         =>  NULL,
+            'rfc'         =>  NULL,
+            'gradoAcademico'         =>  NULL,
+            'nCurso'         =>  NULL,
+            'fechaCapacitacion'         =>  NULL,
+            'horaCapacitacion'         =>  NULL,
+            'Enero_Abril_A'         =>  NULL,
+            'Mayo_Agosto_A'         =>  NULL,
+            'Septiembre_Diciembre_A'         =>  NULL,
+            'Enero_Abril_T'         =>  NULL,
+            'Mayo_Agosto_T'         =>  NULL,
+            'Septiembre_Diciembre_T'         =>  NULL,
+            'ncuerpoAcademico'         =>  NULL,
+            'lineaInvestigacion'         =>  NULL,
+            'gradoConsolidacion'         =>  NULL,
+            'añoRegistro'         =>  NULL,
+            'tipo'         =>  NULL,
+            'titulo'         =>  NULL,
+            'autor'         =>  NULL,
+            'descripcion'         =>  NULL,
+            'pais'         =>  NULL,
+            'isbn'         =>  NULL,
+            'issn'         =>  NULL,
+            'nombreAsignatura'         =>  NULL,
+            'programaEducativo'         =>  NULL,
+            'periodo'         =>  NULL,
+            'nomProyecto'         =>  NULL,
+            'nomEmpresa'         =>  NULL,
+            'fechaInicio'         =>  NULL,
+            'fechaTermino'         =>  NULL,
+            'tipoGestion'         =>  NULL,
+            'funcionEncomendada'         =>  NULL,
+            'organoBeneficiado'         =>  NULL,
+            'año'         =>  NULL,
+            'professors_id' => $professor['id']
+        );
+        CurriculumProfessor::create($form_data_curriculum);
         return response()->json(['success' => 'Data Added successfully.']);
     }
 
@@ -179,7 +218,10 @@ class ListProfessorController extends Controller
      */
     public function destroy($id)
     {
-        $data = ListProfessor::findOrFail($id);
+        $curriculum = CurriculumProfessor::findOrFail($id);
+        $curriculum->delete();
+        
+        $data = ListProfessor::findOrFail($id);    
         $data->delete();
     }
 }
