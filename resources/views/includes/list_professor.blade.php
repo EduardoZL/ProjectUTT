@@ -6,7 +6,7 @@
         </div>
         <br />
         <div class="d-flex justify-content-center">
-            <h1> Lista de Profesores</h1>
+            <h1 style="font-family: Times New Roman, Times, serif;"> Lista de Profesores</h1>
             <br />
             <br />
             <br />

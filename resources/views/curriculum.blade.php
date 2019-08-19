@@ -2,7 +2,7 @@
 
 @section('content')
             <div class="card">
-                <div class="card-header text-center">Modulo Curriculum</div>
+                <div class="card-header text-center"></div>
                 <div class="card-body">
                         @include('includes.curriculum_professor')  
                         @if (session('status'))

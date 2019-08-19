@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-header">Menu</div>
+    <div class="card-header text-center">Menu</div>
         <div class="card-body">
             <ul class="nav nav-pills nav-stacked">
                 @if (auth()->check())                    

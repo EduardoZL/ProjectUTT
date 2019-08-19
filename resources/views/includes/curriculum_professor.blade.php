@@ -1,8 +1,11 @@
 <body>
-    <div class="container">        
+    <div class="container">
+        <h3 style="text-align:center; font-family: Times New Roman, Times, serif;">Detalles del currículum</h3>
+        <br />                 
         <div class="panel-group">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <h4 style="font-family: Times New Roman, Times, serif;">Sección</h4>
                     <h5 class="panel-title ">
                         <a data-toggle="collapse" href="#seccion1">Datos generales</a>
                     </h5>
@@ -77,30 +80,30 @@
                                     <td colspan="2" width="100%" class="text-center">Evaluacion asesor</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Enero-Abril :</td>
+                                    <td width="30%">Enero - Abril :</td>
                                     <td id="sec3Enero_A">{{ isset($professor->curriculum) ? $professor->curriculum[0]->Enero_Abril_A : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Mayo-Agosto :</td>
+                                    <td width="30%">Mayo - Agosto :</td>
                                     <td id="sec3Mayo_A">{{ isset($professor->curriculum) ? $professor->curriculum[0]->Mayo_Agosto_A : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Septiembre-Diciembre :</td>
+                                    <td width="30%">Septiembre - Diciembre :</td>
                                     <td id="sec3Septiembre_A">{{ isset($professor->curriculum) ? $professor->curriculum[0]->Septiembre_Diciembre_A : '' }}</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" width="100%" class="text-center">Evaluacion tutor</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Enero-Abril :</td>
+                                    <td width="30%">Enero - Abril :</td>
                                     <td id="sec3Enero_T">{{ isset($professor->curriculum) ? $professor->curriculum[0]->Enero_Abril_T : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Mayo-Agosto :</td>
+                                    <td width="30%">Mayo - Agosto :</td>
                                     <td id="sec3Mayo_T">{{ isset($professor->curriculum) ? $professor->curriculum[0]->Mayo_Agosto_T : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Septiembre-Diciembre :</td>
+                                    <td width="30%">Septiembre - Diciembre :</td>
                                     <td id="sec3Septiembre_T">{{ isset($professor->curriculum) ? $professor->curriculum[0]->Septiembre_Diciembre_T : '' }}</td>
                                 </tr>
                             </thead>
@@ -287,7 +290,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title ">Datos generales</h5>
+                <h4 class="modal-title" >Datos generales</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -336,7 +339,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title "></h5>
+                <h4 class="modal-title ">Capacitacion</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -379,7 +382,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title "></h5>
+                <h4 class="modal-title ">Evaluacion Docente</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -391,19 +394,19 @@
                     <div class="form-group">
                         <label class="control-label col-md-12 font-weight-bold">Evaluacion del asesor(a) </label>
                         <br />
-                        <label class="control-label col-md-12">Enero-Abril : </label>
+                        <label class="control-label col-md-12">Enero - Abril : </label>
                         <div class="col-md-8">
                             <input type="number" name="Enero_Abril_A" id="Enero_Abril_A" value="{{ $professor->curriculum[0]->Enero_Abril_A }}" min="1" max="100" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12">Mayo-Agosto : </label>
+                        <label class="control-label col-md-12">Mayo - Agosto : </label>
                         <div class="col-md-8">
                             <input type="number" name="Mayo_Agosto_A" id="Mayo_Agosto_A" value="{{ $professor->curriculum[0]->Mayo_Agosto_A }}" min="1" max="100" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Septiembre-Diciembre : </label>
+                        <label class="control-label col-md-12">Septiembre - Diciembre : </label>
                         <div class="col-md-8">
                             <input type="number" name="Septiembre_Diciembre_A" id="Septiembre_Diciembre_A" value="{{ $professor->curriculum[0]->Septiembre_Diciembre_A }}" min="1" max="100" class="form-control" />
                         </div>
@@ -411,19 +414,19 @@
                     <div class="form-group">
                         <label class="control-label col-md-12 font-weight-bold" >Evaluacion de tutor(a) </label>
                         <br />
-                        <label class="control-label col-md-12">Enero-Abril : </label>
+                        <label class="control-label col-md-12">Enero - Abril : </label>
                         <div class="col-md-8">
                             <input type="number" name="Enero_Abril_T" id="Enero_Abril_T" value="{{ $professor->curriculum[0]->Enero_Abril_T }}" min="1" max="100" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12">Mayo-Agosto : </label>
+                        <label class="control-label col-md-12">Mayo - Agosto : </label>
                         <div class="col-md-8">
                             <input type="number" name="Mayo_Agosto_T" id="Mayo_Agosto_T" value="{{ $professor->curriculum[0]->Mayo_Agosto_T }}" min="1" max="100" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Septiembre-Diciembre : </label>
+                        <label class="control-label col-md-12">Septiembre - Diciembre : </label>
                         <div class="col-md-8">
                             <input type="number" name="Septiembre_Diciembre_T" id="Septiembre_Diciembre_T" value="{{ $professor->curriculum[0]->Septiembre_Diciembre_T }}" min="1" max="100" class="form-control" />
                         </div>
@@ -444,7 +447,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title "></h5>
+                <h4 class="modal-title ">Cuerpo Academico</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -493,7 +496,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title "></h5>
+                <h4 class="modal-title ">Produccion Academica</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -566,7 +569,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title "></h5>
+                <h4 class="modal-title ">Docencia</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -609,7 +612,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title "></h5>
+                <h4 class="modal-title ">Estadia en empresa</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -658,7 +661,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title "></h5>
+                <h4 class="modal-title ">Gestion academica</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

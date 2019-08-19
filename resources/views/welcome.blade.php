@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 col-md-offset">
-            <div class="card" style="background: #418EC8;">
+            <div class="card" style="background: #418EC8;" >
                 <div class="card-header" style="text-align: center; font-weight: 500px;color:white;">Bienvenido - Sistema de gestion de profesores UTT
                     <div class="card-body">
                         <div class="colwrapper">
