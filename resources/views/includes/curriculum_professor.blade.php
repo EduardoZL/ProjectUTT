@@ -308,13 +308,13 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">Curp : </label>
                         <div class="col-md-8">
-                            <input type="text" name="curp" id="curp" value="{{ $professor->curriculum[0]->curp }}" class="form-control" />
+                            <input type="text" name="curp" id="curp" min="1" max="18" value="{{ $professor->curriculum[0]->curp }}" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
                         <label class="control-label col-md-4">RFC : </label>
                         <div class="col-md-8">
-                            <input type="text" name="rfc" id="rfc" value="{{ $professor->curriculum[0]->rfc }}" class="form-control" />
+                            <input type="text" name="rfc" id="rfc" min="1" max="13" value="{{ $professor->curriculum[0]->rfc }}" class="form-control" />
                         </div>
                     </div>
                         <div class="form-group">
