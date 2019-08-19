@@ -15,11 +15,12 @@ class CreateListProfessorsTable extends Migration
     {
         Schema::create('list_professors', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->bigIncrements('id');            
+            $table->bigIncrements('id');  
+            $table->string('noEmpleado');          
             $table->string('full_name');            
-            $table->string('email');            
-            $table->string('telefono');
+            $table->string('email');
             $table->string('puesto');
+            $table->string('carrera');
             $table->timestamps();
         });
     }

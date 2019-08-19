@@ -16,11 +16,12 @@
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-sm" id="user_table">
                 <thead class="thead-dark">
-                    <tr>                        
-                        <th width="20%">Nombre del Profesor</th>                
-                        <th width="15%">Correo</th>                
-                        <th width="10%">Telefono</th>
-                        <th width="20%">Puesto</th>                
+                    <tr>            
+                        <th width="0%">No.Empleado</th>            
+                        <th width="30%">Nombre del Profesor</th>                
+                        <th width="15%">Correo</th>
+                        <th width="20%">Puesto</th>
+                        <th width="15%">Carrera</th>                
                         <th width="20%">Accion</th>
                     </tr>
                 </thead>
@@ -47,30 +48,36 @@
          <form method="post" id="sample_form" class="form-horizontal" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
+            <label class="control-label col-md-4">No. Empleado : </label>
+            <div class="col-md-8">
+             <input type="number" name="noEmpleado" id="noEmpleado" class="form-control" />
+            </div>
+           </div>
+          <div class="form-group">
             <label class="control-label col-md-12" >Nombre Completo : </label>
             <div class="col-md-8">
-             <input type="text" name="full_name" id="full_name" class="form-control" />
+             <input type="text" name="full_name" id="full_name" style="text-transform: capitalize;" class="form-control" />
             </div>
            </div>           
            <div class="form-group">
             <label class="control-label col-md-4">Correo : </label>
             <div class="col-md-8">
-             <input type="text" name="email" id="email" class="form-control" />
+             <input type="text" name="email" id="email" style="text-transform: lowercase;" class="form-control" />
             </div>
-           </div>           
-           <div class="form-group">
-            <label class="control-label col-md-4">Telefono : </label>
-            <div class="col-md-8">
-             <input type="text" name="telefono" id="telefono" class="form-control" />
-            </div>
-           </div>
+           </div> 
            <div class="form-group">
             <label class="control-label col-md-4">Puesto : </label>
             <div class="col-md-8">
-             <input type="text" name="puesto" id="puesto" class="form-control" />
+             <input type="text" name="puesto" id="puesto" style="text-transform: lowercase;" class="form-control" />
             </div>
            </div> 
            <br />
+           <div class="form-group">
+            <label class="control-label col-md-4">Carrera : </label>
+            <div class="col-md-8">
+             <input type="text" name="carrera" id="carrera" style="text-transform: lowercase;" class="form-control" />
+            </div>
+           </div>            
            <div class="form-group" align="center">
             <input type="hidden" name="action" id="action" />
             <input type="hidden" name="hidden_id" id="hidden_id" />
@@ -86,7 +93,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">                
-                <h5 class="modal-title">Confirmacion</h5>
+                <h5 class="modal-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -120,11 +127,12 @@
                 order: [
                     [0, 'desc']                        
                 ],
-                "columns":[                    
+                "columns":[     
+                    {"data": "noEmpleado", "sortable": false},               
                     {"data": "full_name", "sortable": false},
-                    {"data": "email", "sortable": false},
-                    {"data": "telefono", "sortable": false},
+                    {"data": "email", "sortable": false},                    
                     {"data": "puesto", "sortable": false},
+                    {"data": "carrera", "sortable": false},
                     {"data": "actions", "sortable": false},
                 ],
                 "ajax": {
@@ -138,10 +146,11 @@
             $("#action_button").prop('value', 'Add');
             $('#action').val("Add");
             // Limpiamos los campos, para el nuevo registro.
+            $('#noEmpleado').val('');
             $('#full_name').val('');    
             $('#email').val('');    
-            $('#telefono').val('');
-            $('#puesto').val(''); 
+            $('#puesto').val('');
+            $('#carrera').val(''); 
             $('#form_result').addClass('d-none');
             $('#action_button').addClass('btn-success').removeClass('btn-warning');
             $('#action_button').html('<span id="iconModal"class="fa fa-plus m-1"></span>Add');
@@ -219,10 +228,11 @@
                 url:"/Proyecto/" + id + "/edit",
                 dataType:"json",
                 success:function(html) {
+                    $('#noEmpleado').val(html.data.noEmpleado);
                     $('#full_name').val(html.data.full_name);    
                     $('#email').val(html.data.email);    
-                    $('#telefono').val(html.data.telefono);
-                    $('#puesto').val(html.data.puesto);                        
+                    $('#puesto').val(html.data.puesto);
+                    $('#carrera').val(html.data.carrera);                        
                     $('#hidden_id').val(html.data.id);
                     $('.modal-title').text("Editar nuevo registro");
                     $("#action_button").prop('value', 'Edit');

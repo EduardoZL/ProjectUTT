@@ -33,11 +33,12 @@ class ListProfessorController extends Controller
         $list_professors = ListProfessor::all()
             ->map(function ($professor) {
                     return [
-                        'id' => $professor->id,                        
+                        'id' => $professor->id, 
+                        'noEmpleado' => $professor->noEmpleado,                       
                         'full_name' => $professor->full_name,
-                        'email' => $professor->email,
-                        'telefono' => $professor->telefono,
+                        'email' => $professor->email,                        
                         'puesto' => $professor->puesto,
+                        'carrera' => $professor->carrera,
                     ];
                 }
             );
@@ -74,10 +75,11 @@ class ListProfessorController extends Controller
     {
         Log::info($request);
         $rules = array(
+            'noEmpleado'     =>  'required',
             'full_name'    =>  'required',            
-            'email'     =>  'required',            
-            'telefono'     =>  'required',
-            'puesto'     =>  'required'           
+            'email'     =>  'required',
+            'puesto'     =>  'required',
+            'carrera'     =>  'required'           
             
         );
 
@@ -93,10 +95,11 @@ class ListProfessorController extends Controller
         
 
         $form_data = array(
+            'noEmpleado'         =>  $request->noEmpleado,
             'full_name'        =>  $request->full_name,            
-            'email'         =>  $request->email,            
-            'telefono'         =>  $request->telefono,
-            'puesto'         =>  $request->puesto          
+            'email'         =>  $request->email,
+            'puesto'         =>  $request->puesto,
+            'carrera'         =>  $request->carrera          
             
         );
 
@@ -184,10 +187,11 @@ class ListProfessorController extends Controller
         /* $image = $request->file('image'); */        
                 
         $rules = array(
+            'noEmpleado'     =>  'required',
             'full_name'    =>  'required',                
-            'email'     =>  'required',                
-            'telefono'     =>  'required',
-            'puesto'     =>  'required'                
+            'email'     =>  'required',     
+            'puesto'     =>  'required',
+            'carrera'     =>  'required'                
                 
         );
 
@@ -199,10 +203,11 @@ class ListProfessorController extends Controller
         }        
 
         $form_data = array(
+            'noEmpleado'         =>  $request->noEmpleado,
             'full_name'       =>   $request->full_name,            
-            'email'        =>   $request->email,            
-            'telefono'         =>  $request->telefono,
-            'puesto'        =>   $request->puesto           
+            'email'        =>   $request->email,                        
+            'puesto'        =>   $request->puesto,
+            'carrera'        =>   $request->carrera           
             
         );
         ListProfessor::whereId($request->hidden_id)->update($form_data);
