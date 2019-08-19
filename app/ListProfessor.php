@@ -12,7 +12,6 @@ class ListProfessor extends Model
     ];
 
     public function curriculum() {
-
         return $this->belongsTo(CurriculumProfessor::class);
     }
 }

@@ -1,11 +1,12 @@
 <body>
     <div class="container">    
         <div class="d-flex justify-content-right">
-        <button type="button" name="create_record" id="create_record" class="btn btn-success btn-sm">Nuevo Registro</button>
+        <button type="button" name="create_record" id="create_record" class="btn btn-success btn-sm">
+        <span class="fa fa-plus m-1"></span>Nuevo Registro</button>
         </div>
         <br />
         <div class="d-flex justify-content-center">
-            <h1> Lista de Profesores</h1>
+            <h1 style="font-family: Times New Roman, Times, serif;"> Lista de Profesores</h1>
             <br />
             <br />
             <br />
@@ -15,13 +16,12 @@
         <div class="table-responsive">
             <table class="table table-bordered table-striped table-sm" id="user_table">
                 <thead class="thead-dark">
-                    <tr>
-                        <!-- <th width="10%">Foto</th> -->
+                    <tr>                        
                         <th width="20%">Nombre del Profesor</th>                
                         <th width="15%">Correo</th>                
                         <th width="10%">Telefono</th>
                         <th width="20%">Puesto</th>                
-                        <th width="30%">Accion</th>
+                        <th width="20%">Accion</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,19 +69,12 @@
             <div class="col-md-8">
              <input type="text" name="puesto" id="puesto" class="form-control" />
             </div>
-           </div>           
-           <!-- <div class="form-group">
-            <label class="control-label col-md-4">Selecciona una imagen de perfil : </label>
-            <div class="col-md-8">
-             <input type="file" name="image" id="image" />
-             <span id="store_image"></span>
-            </div>
-           </div> -->
+           </div> 
            <br />
            <div class="form-group" align="center">
             <input type="hidden" name="action" id="action" />
             <input type="hidden" name="hidden_id" id="hidden_id" />
-            <input type="submit" name="action_button" id="action_button" class="btn btn-warning" value="Add" />
+            <button type="submit" name="action_button" id="action_button" class="btn"></button>
            </div>
          </form>
         </div>
@@ -114,7 +107,7 @@
     $(document).ready(function(){
 
         oTable = $('#user_table').DataTable({
-                "pageLength": 25,
+                "pageLength": 10,
                 "language": {
                     "url":"//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json",
                     "searchPlaceholder": "Buscar...",
@@ -127,8 +120,7 @@
                 order: [
                     [0, 'desc']                        
                 ],
-                "columns":[
-                    /* {"data": "image", "sortable": false, "orderable" : false}, */
+                "columns":[                    
                     {"data": "full_name", "sortable": false},
                     {"data": "email", "sortable": false},
                     {"data": "telefono", "sortable": false},
@@ -143,8 +135,17 @@
         $('#create_record').click(function(e){
             e.preventDefault();
             $('.modal-title').text("Agregar nuevo registro");
-            $('#action_button').val("Add");
+            $("#action_button").prop('value', 'Add');
             $('#action').val("Add");
+            // Limpiamos los campos, para el nuevo registro.
+            $('#full_name').val('');    
+            $('#email').val('');    
+            $('#telefono').val('');
+            $('#puesto').val(''); 
+            $('#form_result').addClass('d-none');
+            $('#action_button').addClass('btn-success').removeClass('btn-warning');
+            $('#action_button').html('<span id="iconModal"class="fa fa-plus m-1"></span>Add');
+            $('#iconModal').addClass('fa-plus').removeClass('fa-pencil');
             $('#formModal').modal('show');
         });
 
@@ -159,25 +160,22 @@
                     cache:false,
                     processData: false,
                     dataType:"json",
-                    success:function(data)
-                    {
-                    var html = '';
-                    if(data.errors)
-                    {
-                    html = '<div class="alert alert-danger">';
-                    for(var count = 0; count < data.errors.length; count++)
-                    {
-                    html += '<p>' + data.errors[count] + '</p>';
-                    }
-                    html += '</div>';
-                    }
-                    if(data.success)
-                    {
-                    html = '<div class="alert alert-success">' + data.success + '</div>';
-                    $('#sample_form')[0].reset();
-                    $('#user_table').DataTable().ajax.reload();
-                    }
-                    $('#form_result').html(html);
+                    success:function(data) {
+                        var html = '';
+                        if(data.errors) {
+                            html = '<div class="alert alert-danger">';
+                            for(var count = 0; count < data.errors.length; count++) {
+                                html += '<p>' + data.errors[count] + '</p>';
+                            }
+                            html += '</div>';
+                        }
+                        if(data.success) {
+                            html = '<div class="alert alert-success">' + data.success + '</div>';
+                            $('#sample_form')[0].reset();
+                            $('#user_table').DataTable().ajax.reload();
+                            $('#formModal').modal('hide'); // Ocultamos modal.
+                        }
+                        $('#form_result').html(html);
                     }
                 });
             }
@@ -224,12 +222,13 @@
                     $('#full_name').val(html.data.full_name);    
                     $('#email').val(html.data.email);    
                     $('#telefono').val(html.data.telefono);
-                    $('#puesto').val(html.data.puesto);    
-                    /* $('#store_image').html("<img src={{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
-                    $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />"); */ 
+                    $('#puesto').val(html.data.puesto);                        
                     $('#hidden_id').val(html.data.id);
                     $('.modal-title').text("Editar nuevo registro");
-                    $('#action_button').val("Edit");
+                    $("#action_button").prop('value', 'Edit');
+                    $('#action_button').addClass('btn-warning').removeClass('btn-success');
+                    $("#action_button").html('<span id="iconModal"class="fa fa-pencil m-1"></span>Edit');
+
                     $('#action').val("Edit");
                     $('#formModal').modal('show');
                 }

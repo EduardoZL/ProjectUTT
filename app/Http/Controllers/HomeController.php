@@ -25,12 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-
-    public function list() {
-        return view('list');
-    }
-
-    /* public function curriculum() {
-        return view('curriculum');
-    } */
 }

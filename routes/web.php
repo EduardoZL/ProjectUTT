@@ -25,4 +25,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/lista', 'HomeController@list');
+// Detalle de curriculum por profesor.
+Route::get('home/{professor}/detalles', 'CurriculumProfessorController@data');
+Route::post('home/{professor}/detalles', 'CurriculumProfessorController@store');
