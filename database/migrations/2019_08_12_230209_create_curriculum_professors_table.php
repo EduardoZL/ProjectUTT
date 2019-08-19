@@ -52,7 +52,7 @@ class CreateCurriculumProfessorsTable extends Migration
             $table->string('tipo')->nullable();
             $table->string('titulo')->nullable();
             $table->string('autor')->nullable();
-            $table->string('descripcion')->nullable();
+            $table->string('descripcion', 255)->nullable();
             $table->string('pais')->nullable();
             $table->string('añoPro')->nullable();
             $table->string('isbn')->nullable();            
@@ -61,7 +61,7 @@ class CreateCurriculumProfessorsTable extends Migration
             $table->string('arttipo')->nullable();
             $table->string('arttitulo')->nullable();
             $table->string('artautor')->nullable();
-            $table->string('artdescripcion')->nullable();
+            $table->string('artdescripcion', 255)->nullable();
             $table->string('artpais')->nullable();
             $table->string('artañoPro')->nullable();
             $table->string('artisbn')->nullable();            
@@ -70,7 +70,7 @@ class CreateCurriculumProfessorsTable extends Migration
             $table->string('pertipo')->nullable();
             $table->string('pertitulo')->nullable();
             $table->string('perautor')->nullable();
-            $table->string('perdescripcion')->nullable();
+            $table->string('perdescripcion', 255)->nullable();
             $table->string('perpais')->nullable();
             $table->string('perañoPro')->nullable();
             $table->string('perisbn')->nullable();            

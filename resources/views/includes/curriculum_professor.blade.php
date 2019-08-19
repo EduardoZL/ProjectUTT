@@ -810,7 +810,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">Descripcion : </label>
                         <div class="col-md-8">
-                            <input type="text" name="descripcion" id="descripcion" value="{{ $professor->curriculum[0]->descripcion }}" class="form-control w3-input w3-border" />
+                            <input type="text" maxlength="255" name="descripcion" id="descripcion" value="{{ $professor->curriculum[0]->descripcion }}" class="form-control w3-input w3-border" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -860,7 +860,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">Descripcion : </label>
                         <div class="col-md-8">
-                            <input type="text" name="artdescripcion" id="artdescripcion" value="{{ $professor->curriculum[0]->artdescripcion }}" class="form-control" />
+                            <input type="text" maxlength="255" name="artdescripcion" id="artdescripcion" value="{{ $professor->curriculum[0]->artdescripcion }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -910,7 +910,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">Descripcion : </label>
                         <div class="col-md-8">
-                            <input type="text" name="perdescripcion" id="perdescripcion" value="{{ $professor->curriculum[0]->perdescripcion }}" class="form-control" />
+                            <input type="text" maxlength="255" name="perdescripcion" id="perdescripcion" value="{{ $professor->curriculum[0]->perdescripcion }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
