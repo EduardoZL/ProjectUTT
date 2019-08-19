@@ -503,7 +503,7 @@
                                 </tr>
                                 <tr>
                                     <td width="30%">Funcion encomendada :</td>
-                                    <td id="sec83Funcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->trestipoGestion : '' }}</td>
+                                    <td id="sec83Funcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->tresfuncionEncomedada : '' }}</td>
                                 </tr>
                                 <tr>
                                     <td width="30%">Organo beneficiado :</td>
@@ -1134,19 +1134,19 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Nombre de la empresa : </label>
+                        <label class="control-label col-md-12">Nombre de la empresa : </label>
                         <div class="col-md-8">
                             <input type="text" name="nomEmpresa" id="nomEmpresa" value="{{ $professor->curriculum[0]->nomEmpresa }}" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-4">Fecha de inicio : </label>
+                        <label class="control-label col-md-12">Fecha de inicio : </label>
                         <div class="col-md-8">
                             <input type="date" name="fechaInicio" id="fechaInicio" value="{{ $professor->curriculum[0]->fechaInicio }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Fecha de termino : </label>
+                        <label class="control-label col-md-12">Fecha de termino : </label>
                         <div class="col-md-8">
                             <input type="date" name="fechaTermino" id="fechaTermino" value="{{ $professor->curriculum[0]->fechaTermino }}" class="form-control" />
                         </div>
@@ -1239,7 +1239,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-12">Funcion encomendada : </label>
                         <div class="col-md-8">
-                            <input type="text" name="trestipoGestion" id="trestipoGestion" value="{{ $professor->curriculum[0]->trestipoGestion }}" class="form-control" />
+                            <input type="text" name="tresfuncionEncomedada" id="tresfuncionEncomedada" value="{{ $professor->curriculum[0]->tresfuncionEncomedada }}" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
