@@ -17,12 +17,14 @@
             <table class="table table-bordered table-striped table-sm" id="user_table">
                 <thead class="thead-dark">
                     <tr>            
-                        <th width="0%">No.Empleado</th>            
-                        <th width="30%">Nombre del Profesor</th>                
-                        <th width="15%">Correo</th>
+                        <th width="0%">No.
+                        Empleado
+                        </th>            
+                        <th width="30%" >Nombre del Profesor</th>                
+                        <th width="20%">Correo</th>
                         <th width="20%">Puesto</th>
-                        <th width="15%">Carrera</th>                
-                        <th width="20%">Accion</th>
+                        <th width="12%">Carrera</th>                
+                        <th width="30%">Accion</th>
                     </tr>
                 </thead>
                 <tbody>

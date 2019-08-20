@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-            <div class="card" style="width:1350px;">
+            <div class="card" style="position: absolute; width: 1150px; overflow: auto;">
                 <div class="card-header"></div>
 
                 <div class="card-body">
