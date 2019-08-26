@@ -70,14 +70,14 @@
            <div class="form-group">
             <label class="control-label col-md-4">Puesto : </label>
             <div class="col-md-8">
-             <input type="text" name="puesto" id="puesto" style="text-transform: lowercase;" class="form-control" />
+             <input type="text" name="puesto" id="puesto" style="text-transform: uppercase;" class="form-control" />
             </div>
            </div> 
            <br />
            <div class="form-group">
             <label class="control-label col-md-4">Carrera : </label>
             <div class="col-md-8">
-             <input type="text" name="carrera" id="carrera" style="text-transform: lowercase;" class="form-control" />
+             <input type="text" name="carrera" id="carrera" style="text-transform: uppercase;" class="form-control" />
             </div>
            </div>            
            <div class="form-group" align="center">

@@ -31,7 +31,7 @@
                                     <td id="sec1Rfc">{{ isset($professor->curriculum) ? $professor->curriculum[0]->rfc : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Grado Academico :</td>
+                                    <td width="30%">Grado Académico :</td>
                                     <td id="sec1Academico">{{ isset($professor->curriculum) ? $professor->curriculum[0]->gradoAcademico : '' }}</td>
                                 </tr>
                             </thead>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <h5 class="panel-title">
-                        <a data-toggle="collapse" href="#seccion2">Capacitacion</a>
+                        <a data-toggle="collapse" href="#seccion2">Capacitación</a>
                 </h5>
                 <div class="panel-collapse collapse" id="seccion2">
                     <div class="table-responsive">
@@ -103,14 +103,14 @@
                     </div>
                 </div>
                 <h5 class="panel-title">
-                        <a data-toggle="collapse" href="#seccion3">Evaluacion Docente</a>
+                        <a data-toggle="collapse" href="#seccion3">Evaluación Docente</a>
                 </h5>
                 <div class="panel-collapse collapse" id="seccion3">
                     <div class="table-responsive">
                         <table id="table_curriculum" class="table table-bordered ">
                             <thead>
                                 <tr>
-                                    <td colspan="2" width="100%" class="text-center">Evaluacion asesor</td>
+                                    <td colspan="2" width="100%" class="text-center">Evaluación asesor</td>
                                 </tr>
                                 <tr>
                                     <td width="30%">Enero - Abril :</td>
@@ -125,7 +125,7 @@
                                     <td id="sec3Septiembre_A">{{ isset($professor->curriculum) ? $professor->curriculum[0]->Septiembre_Diciembre_A : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" width="100%" class="text-center">Evaluacion tutor</td>
+                                    <td colspan="2" width="100%" class="text-center">Evaluación tutor</td>
                                 </tr>
                                 <tr>
                                     <td width="30%">Enero - Abril :</td>
@@ -148,7 +148,7 @@
                     </div>
                 </div>
                 <h5 class="panel-title">
-                        <a data-toggle="collapse" href="#seccion4">Cuerpo Academico</a>
+                        <a data-toggle="collapse" href="#seccion4">Cuerpo Académico</a>
                 </h5>
                 <div class="panel-collapse collapse" id="seccion4">
                     <div class="table-responsive">
@@ -159,11 +159,11 @@
                                     <td id="sec4Nombre">{{ isset($professor->curriculum) ? $professor->curriculum[0]->ncuerpoAcademico : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Linea de investigacion :</td>
+                                    <td width="30%">Línea de investigación :</td>
                                     <td id="sec4Linea">{{ isset($professor->curriculum) ? $professor->curriculum[0]->lineaInvestigacion : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Grado de consolidacion :</td>
+                                    <td width="30%">Grado de consolidación :</td>
                                     <td id="sec4Grado">{{ isset($professor->curriculum) ? $professor->curriculum[0]->gradoConsolidacion : '' }}</td>
                                 </tr>
                                 <tr>
@@ -179,7 +179,7 @@
                     </div>
                 </div>
                 <h5 class="panel-title">
-                        <a data-toggle="collapse" href="#seccion5">Produccion Academica</a>
+                        <a data-toggle="collapse" href="#seccion5">Producción Académica</a>
                 </h5>
                 <div class="panel-collapse collapse" id="seccion5">
                     <div class="table-responsive">
@@ -193,7 +193,7 @@
                                     <td id="sec5Tipo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->tipo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Titulo :</td>
+                                    <td width="30%">Título :</td>
                                     <td id="sec5Titulo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->titulo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -201,11 +201,11 @@
                                     <td id="sec5Autor">{{ isset($professor->curriculum) ? $professor->curriculum[0]->autor : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Descripcion :</td>
+                                    <td width="30%">Descripción :</td>
                                     <td height="100%" id="sec5Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->descripcion : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Pais :</td>
+                                    <td width="30%">País :</td>
                                     <td id="sec5Pais">{{ isset($professor->curriculum) ? $professor->curriculum[0]->pais : '' }}</td>
                                 </tr>
                                 <tr>
@@ -221,14 +221,14 @@
                                     <td id="sec5issn">{{ isset($professor->curriculum) ? $professor->curriculum[0]->issn : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" width="100%" class="text-center">Articulo</td>
+                                    <td colspan="2" width="100%" class="text-center">Artículo</td>
                                 </tr>
                                 <tr>
                                     <td width="30%">Tipo :</td>
                                     <td id="sec52Tipo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->arttipo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Titulo :</td>
+                                    <td width="30%">Título :</td>
                                     <td id="sec52Titulo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->arttitulo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -236,11 +236,11 @@
                                     <td id="sec52Autor">{{ isset($professor->curriculum) ? $professor->curriculum[0]->artautor : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Descripcion :</td>
+                                    <td width="30%">Descripción :</td>
                                     <td height="100%" id="sec52Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->artdescripcion : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Pais :</td>
+                                    <td width="30%">País :</td>
                                     <td id="sec52Pais">{{ isset($professor->curriculum) ? $professor->curriculum[0]->artpais : '' }}</td>
                                 </tr>
                                 <tr>
@@ -263,7 +263,7 @@
                                     <td id="sec53Tipo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->pertipo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Titulo :</td>
+                                    <td width="30%">Título :</td>
                                     <td id="sec53Titulo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->pertitulo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -271,11 +271,11 @@
                                     <td id="sec53Autor">{{ isset($professor->curriculum) ? $professor->curriculum[0]->perautor : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Descripcion :</td>
+                                    <td width="30%">Descripción :</td>
                                     <td height="100%" id="sec53Descripcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->perdescripcion : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Pais :</td>
+                                    <td width="30%">País :</td>
                                     <td id="sec53Pais">{{ isset($professor->curriculum) ? $professor->curriculum[0]->perpais : '' }}</td>
                                 </tr>
                                 <tr>
@@ -317,7 +317,7 @@
                                     <td id="sec6Programa">{{ isset($professor->curriculum) ? $professor->curriculum[0]->programaEducativo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Periodo :</td>
+                                    <td width="30%">Período :</td>
                                     <td id="sec6Periodo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->periodo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -332,7 +332,7 @@
                                     <td id="sec62Programa">{{ isset($professor->curriculum) ? $professor->curriculum[0]->dosprogramaEducativo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Periodo :</td>
+                                    <td width="30%">Período :</td>
                                     <td id="sec62Periodo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->dosperiodo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -347,7 +347,7 @@
                                     <td id="sec63Programa">{{ isset($professor->curriculum) ? $professor->curriculum[0]->tresprogramaEducativo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Periodo :</td>
+                                    <td width="30%">Período :</td>
                                     <td id="sec63Periodo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->tresperiodo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -362,7 +362,7 @@
                                     <td id="sec64Programa">{{ isset($professor->curriculum) ? $professor->curriculum[0]->cuatroprogramaEducativo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Periodo :</td>
+                                    <td width="30%">Período :</td>
                                     <td id="sec64Periodo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->cuatroperiodo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -377,7 +377,7 @@
                                     <td id="sec65Programa">{{ isset($professor->curriculum) ? $professor->curriculum[0]->cincoprogramaEducativo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Periodo :</td>
+                                    <td width="30%">Período :</td>
                                     <td id="sec65Periodo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->cincoperiodo : '' }}</td>
                                 </tr>
                                 <tr>
@@ -392,7 +392,7 @@
                                     <td id="sec66Programa">{{ isset($professor->curriculum) ? $professor->curriculum[0]->seisprogramaEducativo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Periodo :</td>
+                                    <td width="30%">Período :</td>
                                     <td id="sec66Periodo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->seisperiodo : '' }}</td>
                                 </tr>   
                                 <tr>
@@ -407,7 +407,7 @@
                                     <td id="sec67Programa">{{ isset($professor->curriculum) ? $professor->curriculum[0]->sieteprogramaEducativo : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Periodo :</td>
+                                    <td width="30%">Período :</td>
                                     <td id="sec67Periodo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->sieteperiodo : '' }}</td>
                                 </tr>  
                             </thead>
@@ -438,7 +438,7 @@
                                     <td id="sec7Finicio">{{ isset($professor->curriculum) ? $professor->curriculum[0]->fechaInicio : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Fecha de termino :</td>
+                                    <td width="30%">Fecha de término :</td>
                                     <td id="sec7Ftermino">{{ isset($professor->curriculum) ? $professor->curriculum[0]->fechaTermino : '' }}</td>
                                 </tr>
                             </thead>
@@ -450,7 +450,7 @@
                     </div>
                 </div>
                 <h5 class="panel-title ">
-                        <a data-toggle="collapse" href="#seccion8">Gestion academica</a>
+                        <a data-toggle="collapse" href="#seccion8">Gestión académica</a>
                 </h5>
                 <div class="panel-collapse collapse" id="seccion8">
                     <div class="table-responsive">
@@ -460,15 +460,15 @@
                                     <td colspan="2" width="100%" class="text-center">Individual</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Tipo de gestion :</td>
+                                    <td width="30%">Tipo de gestión :</td>
                                     <td id="sec8Tipo_gestion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->tipoGestion : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Funcion encomendada :</td>
+                                    <td width="30%">Función encomendada :</td>
                                     <td id="sec8Funcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->funcionEncomendada : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Organo beneficiado :</td>
+                                    <td width="30%">Órgano beneficiado :</td>
                                     <td id="sec8Organo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->organoBeneficiado : '' }}</td>
                                 </tr>
                                 <tr>
@@ -479,15 +479,15 @@
                                     <td colspan="2" width="100%" class="text-center">Colectiva</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Tipo de gestion :</td>
+                                    <td width="30%">Tipo de gestión :</td>
                                     <td id="sec82Tipo_gestion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->dostipoGestion : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Funcion encomendada :</td>
+                                    <td width="30%">Función encomendada :</td>
                                     <td id="sec82Funcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->dosfuncionEncomendada : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Organo beneficiado :</td>
+                                    <td width="30%">Órgano beneficiado :</td>
                                     <td id="sec82Organo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->dosorganoBeneficiado : '' }}</td>
                                 </tr>
                                 <tr>
@@ -498,15 +498,15 @@
                                     <td colspan="2" width="100%" class="text-center">Otra</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Tipo de gestion :</td>
+                                    <td width="30%">Tipo de gestión :</td>
                                     <td id="sec83Tipo_gestion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->trestipoGestion : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Funcion encomendada :</td>
+                                    <td width="30%">Función encomendada :</td>
                                     <td id="sec83Funcion">{{ isset($professor->curriculum) ? $professor->curriculum[0]->tresfuncionEncomedada : '' }}</td>
                                 </tr>
                                 <tr>
-                                    <td width="30%">Organo beneficiado :</td>
+                                    <td width="30%">Órgano beneficiado :</td>
                                     <td id="sec83Organo">{{ isset($professor->curriculum) ? $professor->curriculum[0]->tresorganoBeneficiado : '' }}</td>
                                 </tr>
                                 <tr>
@@ -546,7 +546,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Curp : </label>
+                        <label class="control-label col-md-4">CURP : </label>
                         <div class="col-md-8">
                             <input type="text" name="curp" id="curp" min="1" max="18" value="{{ $professor->curriculum[0]->curp }}" class="form-control" />
                         </div>
@@ -558,7 +558,7 @@
                         </div>
                     </div>
                         <div class="form-group">
-                            <label class="control-label col-md-12">Grado Academico : </label>
+                            <label class="control-label col-md-12">Grado Académico : </label>
                         <div class="col-md-8">
                             <input type="text" name="gradoAcademico" id="gradoAcademico" value="{{ $professor->curriculum[0]->gradoAcademico }}"  class="form-control" />
                         </div>
@@ -579,7 +579,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title ">Capacitacion</h4>
+                <h4 class="modal-title ">Capacitación</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -664,7 +664,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title ">Evaluacion Docente</h4>
+                <h4 class="modal-title ">Evaluación Docente</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -674,7 +674,7 @@
                 <form method="post" id="sec3" class="form-horizontal" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label class="control-label col-md-12 font-weight-bold">Evaluacion del asesor(a) </label>
+                        <label class="control-label col-md-12 font-weight-bold">Evaluación del asesor(a) </label>
                         <br />
                         <label class="control-label col-md-12">Enero - Abril : </label>
                         <div class="col-md-8">
@@ -694,7 +694,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12 font-weight-bold" >Evaluacion de tutor(a) </label>
+                        <label class="control-label col-md-12 font-weight-bold" >Evaluación de tutor(a) </label>
                         <br />
                         <label class="control-label col-md-12">Enero - Abril : </label>
                         <div class="col-md-8">
@@ -729,7 +729,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title ">Cuerpo Academico</h4>
+                <h4 class="modal-title ">Cuerpo Académico</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -745,13 +745,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12">Linea de investigacion : </label>
+                        <label class="control-label col-md-12">Línea de investigación : </label>
                         <div class="col-md-8">
                             <input type="text" name="lineaInvestigacion" id="lineaInvestigacion" value="{{ $professor->curriculum[0]->lineaInvestigacion }}" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Grado de consolidacion : </label>
+                        <label class="control-label col-md-12">Grado de consolidación : </label>
                         <div class="col-md-8">
                             <input type="text" name="gradoConsolidacion" id="gradoConsolidacion" value="{{ $professor->curriculum[0]->gradoConsolidacion }}" class="form-control" />
                         </div>
@@ -778,7 +778,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title ">Produccion Academica</h4>
+                <h4 class="modal-title ">Producción Académica</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -796,7 +796,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Titulo : </label>
+                        <label class="control-label col-md-4">Título : </label>
                         <div class="col-md-8">
                             <input type="text" name="titulo" id="titulo" value="{{ $professor->curriculum[0]->titulo }}" class="form-control" />
                         </div>
@@ -808,13 +808,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Descripcion : </label>
+                        <label class="control-label col-md-4">Descripción : </label>
                         <div class="col-md-8">
                             <input type="text" maxlength="255" name="descripcion" id="descripcion" value="{{ $professor->curriculum[0]->descripcion }}" class="form-control w3-input w3-border" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Pais : </label>
+                        <label class="control-label col-md-4">País : </label>
                         <div class="col-md-8">
                             <input type="text" name="pais" id="pais" value="{{ $professor->curriculum[0]->pais }}" class="form-control" />
                         </div>
@@ -838,7 +838,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12 font-weight-bold">Articulo </label>
+                        <label class="control-label col-md-12 font-weight-bold">Artículo </label>
                         <br />
                         <label class="control-label col-md-4" >Tipo : </label>
                         <div class="col-md-8">
@@ -846,7 +846,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Titulo : </label>
+                        <label class="control-label col-md-4">Título : </label>
                         <div class="col-md-8">
                             <input type="text" name="arttitulo" id="arttitulo" value="{{ $professor->curriculum[0]->arttitulo }}" class="form-control" />
                         </div>
@@ -858,13 +858,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Descripcion : </label>
+                        <label class="control-label col-md-4">Descripción : </label>
                         <div class="col-md-8">
                             <input type="text" maxlength="255" name="artdescripcion" id="artdescripcion" value="{{ $professor->curriculum[0]->artdescripcion }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Pais : </label>
+                        <label class="control-label col-md-4">País : </label>
                         <div class="col-md-8">
                             <input type="text" name="artpais" id="artpais" value="{{ $professor->curriculum[0]->artpais }}" class="form-control" />
                         </div>
@@ -896,7 +896,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Titulo : </label>
+                        <label class="control-label col-md-4">Título : </label>
                         <div class="col-md-8">
                             <input type="text" name="pertitulo" id="pertitulo" value="{{ $professor->curriculum[0]->pertitulo }}" class="form-control" />
                         </div>
@@ -908,13 +908,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Descripcion : </label>
+                        <label class="control-label col-md-4">Descripción : </label>
                         <div class="col-md-8">
                             <input type="text" maxlength="255" name="perdescripcion" id="perdescripcion" value="{{ $professor->curriculum[0]->perdescripcion }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4">Pais : </label>
+                        <label class="control-label col-md-4">País : </label>
                         <div class="col-md-8">
                             <input type="text" name="perpais" id="perpais" value="{{ $professor->curriculum[0]->perpais }}" class="form-control" />
                         </div>
@@ -977,7 +977,7 @@
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Periodo : </label>
+                        <label class="control-label col-md-12">Período : </label>
                         <div class="col-md-8">
                             <input type="text" name="periodo" id="periodo" value="{{ $professor->curriculum[0]->periodo }}" class="form-control" />
                         </div>
@@ -997,7 +997,7 @@
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Periodo : </label>
+                        <label class="control-label col-md-12">Período : </label>
                         <div class="col-md-8">
                             <input type="text" name="dosperiodo" id="dosperiodo" value="{{ $professor->curriculum[0]->dosperiodo }}" class="form-control" />
                         </div>
@@ -1017,7 +1017,7 @@
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Periodo : </label>
+                        <label class="control-label col-md-12">Período : </label>
                         <div class="col-md-8">
                             <input type="text" name="tresperiodo" id="tresperiodo" value="{{ $professor->curriculum[0]->tresperiodo }}" class="form-control" />
                         </div>
@@ -1037,7 +1037,7 @@
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Periodo : </label>
+                        <label class="control-label col-md-12">Período : </label>
                         <div class="col-md-8">
                             <input type="text" name="cuatroperiodo" id="cuatroperiodo" value="{{ $professor->curriculum[0]->cuatroperiodo }}" class="form-control" />
                         </div>
@@ -1057,7 +1057,7 @@
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Periodo : </label>
+                        <label class="control-label col-md-12">Período : </label>
                         <div class="col-md-8">
                             <input type="text" name="cincoperiodo" id="cincoperiodo" value="{{ $professor->curriculum[0]->cincoperiodo }}" class="form-control" />
                         </div>
@@ -1077,7 +1077,7 @@
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Periodo : </label>
+                        <label class="control-label col-md-12">Período : </label>
                         <div class="col-md-8">
                             <input type="text" name="seisperiodo" id="seisperiodo" value="{{ $professor->curriculum[0]->seisperiodo }}" class="form-control" />
                         </div>
@@ -1097,7 +1097,7 @@
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Periodo : </label>
+                        <label class="control-label col-md-12">Período : </label>
                         <div class="col-md-8">
                             <input type="text" name="sieteperiodo" id="sieteperiodo" value="{{ $professor->curriculum[0]->sieteperiodo }}" class="form-control" />
                         </div>
@@ -1118,7 +1118,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title ">Estadia en empresa</h4>
+                <h4 class="modal-title ">Estadía en empresa</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1146,7 +1146,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12">Fecha de termino : </label>
+                        <label class="control-label col-md-12">Fecha de término : </label>
                         <div class="col-md-8">
                             <input type="date" name="fechaTermino" id="fechaTermino" value="{{ $professor->curriculum[0]->fechaTermino }}" class="form-control" />
                         </div>
@@ -1167,7 +1167,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title ">Gestion academica</h4>
+                <h4 class="modal-title ">Gestión académica</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -1179,19 +1179,19 @@
                     <div class="form-group">
                         <label class="control-label col-md-12 font-weight-bold">Individual </label>
                         <br />
-                        <label class="control-label col-md-12" >Tipo de gestion: </label>
+                        <label class="control-label col-md-12" >Tipo de gestión: </label>
                         <div class="col-md-8">
                             <input type="text" name="tipoGestion" id="tipoGestion" value="{{ $professor->curriculum[0]->tipoGestion }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12">Funcion encomendada : </label>
+                        <label class="control-label col-md-12">Función encomendada : </label>
                         <div class="col-md-8">
                             <input type="text" name="funcionEncomendada" id="funcionEncomendada" value="{{ $professor->curriculum[0]->funcionEncomendada }}" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Organo beneficiado : </label>
+                        <label class="control-label col-md-12">Órgano beneficiado : </label>
                         <div class="col-md-8">
                             <input type="text" name="organoBeneficiado" id="organoBeneficiado" value="{{ $professor->curriculum[0]->organoBeneficiado }}" class="form-control" />
                         </div>
@@ -1205,19 +1205,19 @@
                     <div class="form-group">
                         <label class="control-label col-md-12 font-weight-bold">Colectiva </label>
                         <br />
-                        <label class="control-label col-md-12" >Tipo de gestion: </label>
+                        <label class="control-label col-md-12" >Tipo de gestión: </label>
                         <div class="col-md-8">
                             <input type="text" name="dostipoGestion" id="dostipoGestion" value="{{ $professor->curriculum[0]->dostipoGestion }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12">Funcion encomendada : </label>
+                        <label class="control-label col-md-12">Función encomendada : </label>
                         <div class="col-md-8">
                             <input type="text" name="dosfuncionEncomendada" id="dosfuncionEncomendada" value="{{ $professor->curriculum[0]->dosfuncionEncomendada }}" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Organo beneficiado : </label>
+                        <label class="control-label col-md-12">Órgano beneficiado : </label>
                         <div class="col-md-8">
                             <input type="text" name="dosorganoBeneficiado" id="dosorganoBeneficiado" value="{{ $professor->curriculum[0]->dosorganoBeneficiado }}" class="form-control" />
                         </div>
@@ -1231,19 +1231,19 @@
                     <div class="form-group">
                         <label class="control-label col-md-12 font-weight-bold">Otra </label>
                         <br />
-                        <label class="control-label col-md-12" >Tipo de gestion: </label>
+                        <label class="control-label col-md-12" >Tipo de gestión: </label>
                         <div class="col-md-8">
                             <input type="text" name="trestipoGestion" id="trestipoGestion" value="{{ $professor->curriculum[0]->trestipoGestion }}" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-12">Funcion encomendada : </label>
+                        <label class="control-label col-md-12">Función encomendada : </label>
                         <div class="col-md-8">
                             <input type="text" name="tresfuncionEncomedada" id="tresfuncionEncomedada" value="{{ $professor->curriculum[0]->tresfuncionEncomedada }}" class="form-control" />
                         </div>
                     </div>           
                     <div class="form-group">
-                        <label class="control-label col-md-12">Organo beneficiado : </label>
+                        <label class="control-label col-md-12">Órgano beneficiado : </label>
                         <div class="col-md-8">
                             <input type="text" name="tresorganoBeneficiado" id="tresorganoBeneficiado" value="{{ $professor->curriculum[0]->tresorganoBeneficiado }}" class="form-control" />
                         </div>
